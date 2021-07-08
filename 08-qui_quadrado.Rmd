@@ -146,7 +146,7 @@ Como apresentado no decorrer dos outros capítulos, os valores de P quase nunca 
 
 O tamanho do efeito mais utilizado no ambiente das análises de Qui-quadrado é o V de Cramer. Esta estatística gera valores 0-1 e é dada da seguinte maneira:
 
-$ V=\sqrt\frac{\chi^2}{n*df}$
+$$V=\sqrt\frac{\chi^2}{n*df}$$
 
 Em que:  
 
