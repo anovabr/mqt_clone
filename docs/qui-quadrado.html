@@ -32,7 +32,7 @@
   
 <link rel="prev" href="um-exemplo-real-de-pesquisa.html"/>
 <link rel="next" href="fatores-de-risco.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -542,9 +542,9 @@ onde:<br />
 <p>Inicialmente, é necessário carregar a base para o R. Em seguida, a apresentação de tabelas e gráficos é fundamental antes da realização formal do teste de hipótese e deve ser feita. Para apresentar o relacionamento entre ambas as variáveis, a tabela de contingência é adequada. O pacote <code>descr</code> é um bom recurso para esta apresentação.</p>
 <p>Apesar do Qui-quadrado não estipular uma VI e uma VD, quase sempre as linhas são utilizadas para apresentar a variável de maior interesse (neste caso, sexo) e as colunas para indicar o critério ou o eventual desfecho (neste caso, ter ou não TDAH).</p>
 <p>A porcentagem nas linhas e o valor esperado (em caso de independência entre as variáveis) auxiliam bastante na descrição dos resultados.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="qui-quadrado.html#cb25-1" aria-hidden="true" tabindex="-1"></a>descr<span class="sc">::</span><span class="fu">CrossTable</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent,</span>
-<span id="cb25-2"><a href="qui-quadrado.html#cb25-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">expected =</span> T, <span class="at">prop.c =</span> F, <span class="at">prop.chisq =</span> F, <span class="at">prop.t =</span> F) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="qui-quadrado.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  pander<span class="sc">::</span><span class="fu">pander</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="qui-quadrado.html#cb1-1" aria-hidden="true" tabindex="-1"></a>descr<span class="sc">::</span><span class="fu">CrossTable</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent,</span>
+<span id="cb1-2"><a href="qui-quadrado.html#cb1-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">expected =</span> T, <span class="at">prop.c =</span> F, <span class="at">prop.chisq =</span> F, <span class="at">prop.t =</span> F) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="qui-quadrado.html#cb1-3" aria-hidden="true" tabindex="-1"></a>  pander<span class="sc">::</span><span class="fu">pander</span>()</span></code></pre></div>
 <table>
 <colgroup>
 <col width="30%" />
@@ -611,14 +611,14 @@ Row(%)</td>
 </table>
 <p>É possível verificar que existe uma discrepância entre os valores esperados e observados, em que o diagnóstico parece estar mais presente em meninos do que em meninas. No entanto, essas observações são apenas iniciais.</p>
 <p>Em seguida, a criação de um gráfico de barras oferece um bom recurso para visualizar os dados. Repare que a barra azul, que representa a porcentagem de TDAH, parece se comportar de maneira diferente nos grupos, o que também havia sido detectado na tabela anterior.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="qui-quadrado.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ds_selected, <span class="fu">aes</span>(<span class="at">x=</span> sex_male, <span class="at">fill =</span> adhd_parent)) <span class="sc">+</span></span>
-<span id="cb26-2"><a href="qui-quadrado.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
-<span id="cb26-3"><a href="qui-quadrado.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb26-4"><a href="qui-quadrado.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;sexo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Proporção&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;TDAH&quot;</span>)</span></code></pre></div>
-<p><img src="gitbook-demo_files/figure-html/unnamed-chunk-46-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="qui-quadrado.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ds_selected, <span class="fu">aes</span>(<span class="at">x=</span> sex_male, <span class="at">fill =</span> adhd_parent)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="qui-quadrado.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="qui-quadrado.html#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="qui-quadrado.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;sexo&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Proporção&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;TDAH&quot;</span>)</span></code></pre></div>
+<p><img src="gitbook-demo_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Com isto feito, é possível proceder ao cálculo do Qui-quadrado, tal como feito a seguir.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="qui-quadrado.html#cb27-1" aria-hidden="true" tabindex="-1"></a>descr<span class="sc">::</span><span class="fu">CrossTable</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent,<span class="at">chisq =</span> T)<span class="sc">$</span>CST <span class="sc">%&gt;%</span></span>
-<span id="cb27-2"><a href="qui-quadrado.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  pander<span class="sc">::</span><span class="fu">pander</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="qui-quadrado.html#cb3-1" aria-hidden="true" tabindex="-1"></a>descr<span class="sc">::</span><span class="fu">CrossTable</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent,<span class="at">chisq =</span> T)<span class="sc">$</span>CST <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="qui-quadrado.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  pander<span class="sc">::</span><span class="fu">pander</span>()</span></code></pre></div>
 <table style="width:56%;">
 <caption>Pearson’s Chi-squared test: <code>tab</code></caption>
 <colgroup>
@@ -655,13 +655,13 @@ Row(%)</td>
 <h2><span class="header-section-number">9.3</span> Tamanho do efeito</h2>
 <p>Como apresentado no decorrer dos outros capítulos, os valores de P quase nunca são informativos sobre a <u>relevância</u> dos resultados. Por sua vez, o tamanho do efeito é uma medida objetiva e padronizada sobre um efeito observado e, com isso, é mais atrelada à importância da descoberta na pesquisa.</p>
 <p>O tamanho do efeito mais utilizado no ambiente das análises de Qui-quadrado é o V de Cramer. Esta estatística gera valores 0-1 e é dada da seguinte maneira:</p>
-<p>$ V=$</p>
+<p><span class="math display">\[V=\sqrt\frac{\chi^2}{n*df}\]</span></p>
 <p>Em que:</p>
 <p><span class="math inline">\(\chi^2\)</span> = valor do Qui quadrado obtido<br />
 <span class="math inline">\(n\)</span> = tamanho da amostra<br />
 <span class="math inline">\(df\)</span> menor valor entre (Linhas - 1) ou (Colunas - 1) da tabela de contingências</p>
 <p>A função <code>CramerV</code>do pacote <code>rcompanion</code> gera esses resultados.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="qui-quadrado.html#cb28-1" aria-hidden="true" tabindex="-1"></a>rcompanion<span class="sc">::</span><span class="fu">cramerV</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="qui-quadrado.html#cb4-1" aria-hidden="true" tabindex="-1"></a>rcompanion<span class="sc">::</span><span class="fu">cramerV</span>(ds_selected<span class="sc">$</span>sex_male,ds_selected<span class="sc">$</span>adhd_parent)</span></code></pre></div>
 <pre><code>## Cramer V 
 ##  0.07647</code></pre>
 <p>A interpretação é baseada nos graus de liberdade do Qui-quadrado e é feita da seguinte maneira:</p>
