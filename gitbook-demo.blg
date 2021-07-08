@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: gitbook-demo.aux
+The style file: apalike.bst
+Database file #1: book.bib
+Warning--entry type for "PRB2006" isn't style-file defined
+--line 637 of file book.bib
+Warning--empty institution in Bursztyn2018
+Warning--empty journal in Neal2021
+You've used 81 entries,
+            1935 wiz_defined-function locations,
+            1025 strings with 17636 characters,
+and the built_in function-call counts, 29263 in all, are:
+= -- 2870
+> -- 1026
+< -- 71
++ -- 358
+- -- 328
+* -- 2419
+:= -- 5164
+add.period$ -- 244
+call.type$ -- 81
+change.case$ -- 552
+chr.to.int$ -- 81
+cite$ -- 83
+duplicate$ -- 1155
+empty$ -- 2159
+format.name$ -- 461
+if$ -- 5684
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 95
+newline$ -- 404
+num.names$ -- 248
+pop$ -- 468
+preamble$ -- 1
+purify$ -- 568
+quote$ -- 0
+skip$ -- 871
+stack$ -- 0
+substring$ -- 2032
+swap$ -- 98
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 446
+warning$ -- 2
+while$ -- 252
+width$ -- 0
+write$ -- 1037
+(There were 3 warnings)
